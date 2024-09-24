@@ -6,19 +6,7 @@
     <title>Hello World React</title>
 </head>
 <body>
-    <div id="root"></div>
-
-    <!-- Include React and ReactDOM from CDN -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-
-    <script>
-        // Create a React element
-        const heading = React.createElement("h1", {}, "Hello World from React!");
-
-        // Create a root and render the React element
-        const root = ReactDOM.createRoot(document.getElementById("root"));
-        root.render(heading);
-    </script>
+    <div id="root">Hello</div>
+    <script type="module" src="App.js"></script>
 </body>
 </html>
