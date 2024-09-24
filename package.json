@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "\"This is namaste react from sudesh bagawe\"",
   "scripts": {
+    "start":"parcel index.html",
+    "build":"parcel build index.html",
     "test": "jest\t"
+
   },
   "repository": {
     "type": "git",
