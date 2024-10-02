@@ -55,7 +55,6 @@
 
 .body {
   background-color: #fff;
-  height: 100vh;
   padding: 2em;
 }
 
@@ -97,21 +96,35 @@
 }
 
 .res-container {
+  text-align: center;
   background-color: #fff;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   flex-flow: wrap;
-  justify-content: space-between;
+  height: 500px;
   display: flex;
   overflow: auto;
   box-shadow: 0 0 10px #0000001a;
 }
 
 .restro-card img {
-  border-radius: 10px 10px 0 0;
-  width: 300px;
-  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  width: 240px;
+  height: auto;
+  margin: 5px;
   overflow: auto;
+}
+
+.restro-card {
+  border-radius: 10px 10px 0 0;
+  width: 200px;
+  height: 150px;
+}
+
+.restro-content {
+  height: auto;
+  margin-top: 0;
 }
 
 .res-container h1 {
@@ -121,12 +134,18 @@
 
 .restro-container {
   background-color: #fafaf9;
-  border: 1px solid #000;
+  border: 1px solid #7d7878;
   border-radius: 10px 10px 0 0;
-  width: 300px;
-  height: 350px;
+  width: 250px;
+  height: 400px;
   margin: 20px;
   overflow: auto;
+}
+
+.restro-container:hover {
+  cursor: pointer;
+  border: 1px solid #1f1e1e;
+  transition: all 1s;
 }
 
 .hero {
@@ -134,7 +153,7 @@
   text-align: center;
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNV8v30ohR9bUUtblH54einnH3rzrnQnryRQ&s");
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   justify-content: center;
   align-items: center;
   height: 40vh;
