@@ -101,7 +101,7 @@
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   flex-flow: wrap;
-  height: 500px;
+  height: 300px;
   display: flex;
   overflow: auto;
   box-shadow: 0 0 10px #0000001a;
@@ -111,7 +111,7 @@
   object-fit: cover;
   border-radius: 10px;
   width: 240px;
-  height: auto;
+  height: 150px;
   margin: 5px;
   overflow: auto;
 }
@@ -125,6 +125,8 @@
 .restro-content {
   height: auto;
   margin-top: 0;
+  font-size: .8rem;
+  line-height: .7;
 }
 
 .res-container h1 {
@@ -137,7 +139,7 @@
   border: 1px solid #7d7878;
   border-radius: 10px 10px 0 0;
   width: 250px;
-  height: 400px;
+  height: 300px;
   margin: 20px;
   overflow: auto;
 }
