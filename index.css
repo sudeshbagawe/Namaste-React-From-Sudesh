@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap');
+
 /* header */
 
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -66,25 +73,19 @@
 }
 .search input {
   padding: 8px;
-  width: 300px;
+  width: 200px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 .search button {
-  padding: 8px 20px;
   font-size: 15px;
-  width: 9rem;
+  width: 10em;
   height: 2.5rem;
-  border-radius: 15px;
+  border-radius: 5px;
   background-color: #f7c41e;
+  cursor: pointer;
   color: #474141;
   border: none;
-}
-.search button:hover {
-  background-color: #b98f06;
-  font-size: 20px;
-  color: #0e0d0d;
-  transition: 100ms;
 }
 
 /* Containers */
@@ -94,28 +95,10 @@
   flex-wrap: wrap;
   text-align: center;
   overflow: auto;
-  background-color: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  height: 300px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
 }
 
-.restro-card img {
-  width: 240px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-  overflow: auto;
-  margin: 5px;
-  /* border-radius: 10px 10px 0px 0px; */
-}
-.restro-card{
-  width: 200px;
-  height: 150px;
-  border-radius: 10px;
-  border-radius: 10px 10px 0px 0px;
-}
 .restro-content {
   height: auto;
   margin-top: 0;
@@ -128,19 +111,13 @@
 }
 /* Restro Cards Component */
 .restro-container {
-  width: 250px;
+  width: 100vh;
   height: 300px;
-  border: 1px solid rgb(125, 120, 120);
   background-color: #fafaf9;
   margin: 20px;
-  border-radius: 10px 10px 0px 0px;
-  overflow: auto;
+  overflow: hidden;
 }
-.restro-container:hover{
-  cursor: pointer;
-  border: 1px solid rgb(31, 30, 30);
-  transition: 1000ms;
-}
+
 /* hero section */
 .hero {
   height: 40vh;
@@ -170,4 +147,182 @@
 .no-scroll {
   overflow: hidden;
   height: 50vh;
+}
+
+/* shiimer UI */
+.shimmer-ui {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.shimmer-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  width: 100%;
+}
+
+.shimmer-card {
+  width: 200px;
+  height: 300px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.shimmer-img {
+  width: 100%;
+  height: 150px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+}
+
+.shimmer-title,
+.shimmer-desc,
+.shimmer-rating {
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+}
+
+.shimmer-title {
+  width: 70%;
+}
+
+.shimmer-desc {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.shimmer-rating {
+  width: 50%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -500px 0;
+  }
+  100% {
+    background-position: 500px 0;
+  }
+}
+
+.shimmer-img,
+.shimmer-title,
+.shimmer-desc,
+.shimmer-rating {
+  background: linear-gradient(
+    to right,
+    #e0e0e0 0%,
+    #f0f0f0 50%,
+    #e0e0e0 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+/* Main container for all cards */
+.res-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+
+  overflow: auto;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+}
+
+/* Individual restaurant card styling */
+.restro-container {
+  width: 21%; /* Four cards per row with some spacing */
+  margin-bottom: 20px; /* Space between rows */
+  flex-wrap: wrap;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: fit-content;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.restro-container:hover {
+  transform: scale(0.95);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.restro-image-container {
+  position: relative;
+}
+
+.restro-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.restro-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  text-align: start;
+  font-weight: bold;
+}
+
+.restro-content {
+  padding: 10px;
+  text-align: start;
+}
+
+.restro-name {
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  padding: 5px;
+  margin: 5px 0;
+  white-space: nowrap; /* Prevents text from breaking into the next line */
+  overflow: hidden; /* Hides the overflow content */
+  text-overflow: ellipsis; /* Adds '...' if the text is too long */
+}
+
+.restro-rating {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.star {
+  color: green;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.restro-cuisines {
+  color: rgb(34, 33, 33);
+  font-family: 'Poppins', sans-serif;
+  display: block;
+  margin: 5px 0;
+  font-size: larger;
+  white-space: nowrap; /* Prevents text from breaking into the next line */
+  overflow: hidden; /* Hides the overflow content */
+  text-overflow: ellipsis; /* Adds '...' if the text is too long */
+}
+
+
+.restro-location {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(44, 39, 39);
+  font-size: 14px;
 }
