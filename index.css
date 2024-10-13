@@ -235,7 +235,9 @@ html, body {
   flex-wrap: wrap;
   text-align: center;
   justify-content: center;
-
+  /* min-width: 50%; */
+  margin-left: 10px;
+  margin-bottom: 10px;
   overflow: auto;
   padding: 20px;
   background-color: rgb(255, 255, 255);
@@ -243,9 +245,9 @@ html, body {
 
 /* Individual restaurant card styling */
 .restro-container {
-  width: 21%; /* Four cards per row with some spacing */
+  flex: 0 1 21%;
+  width: 220px; /* Prevent shrinking, allow wrapping */
   margin-bottom: 20px; /* Space between rows */
-  flex-wrap: wrap;
   border-radius: 10px;
   overflow: hidden;
   min-height: fit-content;
@@ -286,10 +288,11 @@ html, body {
 }
 
 .restro-name {
-  font-size: 18px;
+  font-weight:900;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   padding: 5px;
+  columns: white;
   margin: 5px 0;
   white-space: nowrap; /* Prevents text from breaking into the next line */
   overflow: hidden; /* Hides the overflow content */
@@ -325,4 +328,182 @@ html, body {
   font-family: 'Poppins', sans-serif;
   color: rgb(44, 39, 39);
   font-size: 14px;
+}
+
+/* restrocards */
+.restro-menu {
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  margin: 20px;
+}
+
+.menu-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  padding: 10px;
+  width: 60%;
+  text-align: left;
+  transition: transform 0.2s;
+}
+
+.menu-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.menu-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight:bolder ;
+  margin: 10px 0;
+}
+.menu-cuisines{
+font-family: 'Poppins', sans-serif;
+color: red;
+margin: 5px 0;
+}
+.menu-rating,.menu-cost, .menu-location, .menu-discount, .menu-availability {
+  font-family: 'Poppins', sans-serif;
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Container for Top Picks Section */
+.top-picks {
+  display: flex;
+  flex-direction: column; /* Aligns header above images */
+  align-items: center;
+  padding: 10px;
+}
+
+/* Header Styling */
+.top-picks-header {
+  margin-bottom: 15px;
+}
+
+.top-picks-header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Container for Image Cards */
+.top-picks-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  width: 100%; 
+}
+
+/* Image Card Styling */
+.top-pick-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: black;
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effect on Images */
+.top-pick-image:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.recomonded {
+  padding: 20px;
+  background-color: #fff;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.top-pick-header h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.recomnded-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-info {
+  max-width: 60%;
+}
+
+.menu-info h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.description {
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.rating {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rating-score {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.rating-count {
+  color: #666;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.menu-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-image img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.add-btn {
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #218838;
 }

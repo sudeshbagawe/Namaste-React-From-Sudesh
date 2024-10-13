@@ -1,11 +1,22 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./shimmerUI/Shimmer";
+import { Link } from "react-router-dom";
 
+const HeroSection = () => {
+  return (
+    <section className="hero">
+      <div className="hero-content">
+        <h1>Welcome to Our ThaliTails Food Website</h1>
+        <p>Are you looking Hungry. Then why should not try pizza...</p>
+      </div>
+    </section>
+  );
+};
 const Body = () => {
-  const [restroCards, setRestroCards] = useState([]); 
-  const [filteredCards, setFilteredCards] = useState([]); 
-  const [searchRestro, setSearchRestro] = useState(""); 
+  const [restroCards, setRestroCards] = useState([]);
+  const [filteredCards, setFilteredCards] = useState([]);
+  const [searchRestro, setSearchRestro] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -32,9 +43,11 @@ const Body = () => {
   };
 
   return restroCards.length === 0 ? (
+
     <Shimmer />
   ) : (
     <div className="body">
+      <HeroSection />
       <div className="search-bar">
         <div className="search">
           <input
@@ -50,10 +63,9 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredCards.map((restaurant) => (
-          <RestaurantCard
+          <Link key={restaurant?.info?.id} to={"/RestraurantMenu/" + restaurant?.info?.id} >       <RestaurantCard
             resData={restaurant}
-            key={restaurant?.info?.id}
-          />
+          /></Link>
         ))}
       </div>
     </div>
